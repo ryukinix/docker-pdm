@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install libgl1 -y
 RUN pip install pdm setuptools wheel
 RUN pdm init -n && pdm add opencv-python scipy jupyterlab  # cache
 
-WORKDIR=/app
-RUN chmod -R 777 /app
+WORKDIR /app
 
 ENTRYPOINT ["pdm", "run"]
