@@ -4,6 +4,6 @@ VERSION := latest
 build:
 	docker build -t $(DOCKER_REGISTRY) .
 
-publish:
+publish: build
 	docker tag $(DOCKER_REGISTRY) $(DOCKER_REGISTRY):$(VERSION)
 	docker push $(DOCKER_REGISTRY):$(VERSION)
